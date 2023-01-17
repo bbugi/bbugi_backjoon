@@ -5,7 +5,10 @@ n = int(input())
 
 m_list = []
 for _ in range(n):
-    x, y = list(map(str, input().split())) 
+    x, y = map(str, input().split())
+      # 리스트 변수 = input().split() 
+      # x, y = input().split()
+
     m_list.append([int(x), y])
 
 # print(m_list)
