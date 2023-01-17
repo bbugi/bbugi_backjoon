@@ -3,27 +3,17 @@ input = sys.stdin.readline
 
 n = int(input())
 ans = n
-num_cnt = 0
+count = 0
+
 while True:
-    if num_cnt == 0:
-        n1 = n // 10 # 10의자리 수
-        n2 = n % 10 # 1의 자리 수
-        k = n1 + n2
-        k1 = k // 10
-        k2 = k % 10
-        n = int(str(n2) + str(k2))
-        num_cnt += 1
-        continue
-    elif n != ans:
-        n1 = n // 10 # 10의자리 수
-        n2 = n % 10 # 1의 자리 수
-        n = n1 + n2
-        k = n1 + n2
-        k1 = k // 10
-        k2 = k % 10
-        n = int(str(n2) + str(k2))
-        num_cnt += 1
-        continue
-    else:
-        print(num_cnt)
+    n1 = n // 10
+    n2 = n % 10
+    n3 = (n1+n2) % 10
+    # num = int(str(n2)+str(n3))
+    num = n2 * 10 + n3
+    n = num
+    count += 1
+    if num == ans:
         break
+    continue
+print(count)
