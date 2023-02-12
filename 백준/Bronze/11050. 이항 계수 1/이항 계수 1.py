@@ -1,11 +1,8 @@
-def factorial(n):
-    ans = 1
-    for i in range(2, n+1):
-        ans *= i
-    return ans
-
-def bino_coef(n, k): # 이항 계수 : Binomial coefficient
-    return factorial(n) // (factorial(n-k) * factorial(k))
+from itertools import combinations
 
 n, k = map(int, input().split())
-print(bino_coef(n, k))
+
+item = [i for i in range(n)]
+# print(item)
+
+print(len(list(combinations(item, k))))
